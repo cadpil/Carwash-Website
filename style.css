@@ -40,82 +40,23 @@ header {
   height: 100vw;
   position: relative;
 }
-#homepage-main-image-container .comparison-image {
-  position: absolute;
+
+#main-homepage-image {
   width: 100%;
   height: 100%;
-  top: 0;
-  left: 0;
-  background-size: 100vw 100%;
 }
-#homepage-main-image-container #after-image {
-  background-image: url("./images/comparisons/comp_1/after.jpg");
-}
-#homepage-main-image-container #before-image {
-  background-image: url("./images/comparisons/comp_1/before.jpg");
-  width: 50%;
-}
-#homepage-main-image-container #slider {
-  position: absolute;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-       appearance: none;
+
+.juxtapose {
   width: 100%;
   height: 100%;
-  background: rgba(242, 242, 242, 0.3);
-  outline: none;
-  margin: 0;
-  transition: all 0.2s;
-  transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
-#homepage-main-image-container #slider:hover {
-  background: rgba(242, 242, 242, 0.1);
+
+.jx-image img {
+  width: 100%;
 }
-#homepage-main-image-container #slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 6px;
-  height: 99%;
-  background: white;
-  cursor: pointer;
-}
-#homepage-main-image-container #slider::-moz-range-thumb {
-  width: 6px;
-  height: 99%;
-  background: white;
-  cursor: pointer;
-}
-#homepage-main-image-container .slider-button {
-  pointer-events: none;
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: white;
-  left: calc(50% - 18px);
-  top: calc(50% - 18px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#homepage-main-image-container .slider-button:after {
-  content: "";
-  padding: 3px;
-  display: inline-block;
-  border: solid #5D5D5D;
-  border-width: 0 2px 2px 0;
-  transform: rotate(-45deg);
-}
-#homepage-main-image-container .slider-button:before {
-  content: "";
-  padding: 3px;
-  display: inline-block;
-  border: solid #5D5D5D;
-  border-width: 0 2px 2px 0;
-  transform: rotate(135deg);
+
+#preview-container {
+  width: 100%;
 }
 
 button {
