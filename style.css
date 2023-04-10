@@ -19,6 +19,11 @@ html {
 html, body {
   overflow-x: hidden;
   color: #fafafa;
+  min-height: 100vh;
+  display: grid;
+  grid-template-areas: "header" "main" "footer";
+  grid-template-columns: auto;
+  grid-template-rows: auto 1fr auto;
 }
 
 main {
@@ -116,6 +121,7 @@ header {
 
 #homepage-description {
   margin-bottom: 13px;
+  padding: 5px 10px;
 }
 
 #book-now-button {
@@ -131,6 +137,43 @@ header {
 #our-work {
   align-self: flex-start;
   margin-left: 5px;
+}
+
+footer {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 15px 10px 15px 10px;
+  background-color: #f4f4f4;
+  font-size: 0.7rem;
+}
+footer p {
+  margin-top: 10px;
+  margin-left: 2px;
+  margin-bottom: 20px;
+}
+footer #footer-social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer .footer-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 37px;
+  height: 37px;
+  margin: 0px 5px;
+  overflow: hidden;
+}
+footer .footer-link-icon {
+  height: 100%;
+}
+
+.footer-link:hover .footer-link-icon {
+  fill: #ebebeb;
 }
 
 h2 {
@@ -151,7 +194,6 @@ h1 {
 }
 
 p {
-  padding: 5px 10px;
   color: #141414;
 }
 
