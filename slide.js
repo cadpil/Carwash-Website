@@ -5,6 +5,8 @@
  * Copyright (c) 2015 Alex Duner and Northwestern University Knight Lab
  */
 
+let loaded = false;
+
 (function(document, window) {
 
     var juxtapose = {
@@ -533,6 +535,7 @@
                 this.control.appendChild(this.controller);
 
                 this._init();
+                loaded = true;
                 //this.labCredit.remove();
             }
         },

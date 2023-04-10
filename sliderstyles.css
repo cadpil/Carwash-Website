@@ -2,7 +2,7 @@
  * Copyright (c) 2020 Alex Duner and Northwestern University Knight Lab
  */
  div.juxtapose {
-	width: 100%;
+	/* width: 100%; */
 	font-family: Helvetica, Arial, sans-serif;
 }
 
@@ -183,6 +183,7 @@ div.jx-image img {
 div.jx-image.jx-left {
 	left: 0;
 	background-position: left;
+	border-radius: 20px 0px 0px 20px;
 }
 
 div.jx-image.jx-left img {
@@ -192,6 +193,7 @@ div.jx-image.jx-left img {
 div.jx-image.jx-right {
 	right: 0;
 	background-position: right;
+	border-radius: 0px 20px 20px 0px;
 }
 
 div.jx-image.jx-right img {
@@ -288,15 +290,17 @@ div.jx-handle.transition {
 a.jx-knightlab {
 	background-color: #000; /* IE 8 */
 	background-color: rgba(0,0,0,.25);
-	bottom: 0;
+	top: 45px;
 	display: table;
-	height: 14px;
+	max-height: 5px;
 	line-height: 14px;
 	padding: 1px 4px 1px 5px;
 	position: absolute;
-	right: 0;
+	right: -22px;
 	text-decoration: none;
 	z-index: 10;
+	transform: rotate(90deg);
+	border-radius: 0px 0px 4px 4px;
 }
 
 a.jx-knightlab div.knightlab-logo {
