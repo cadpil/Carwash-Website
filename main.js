@@ -2,6 +2,7 @@
 
 const homepageMainImageContainer = document.querySelector('#homepage-main-image-container');
 const homepageCarrossel = homepageMainImageContainer.querySelector('#main-homepage-images');
+const homepageCarrosselWrapper = homepageMainImageContainer.querySelector('#homepage-carrossel-wrapper');
 const imageSelector = homepageMainImageContainer.querySelector('#image-selector');
 const imageSelectorNext = imageSelector.querySelector('#next-comparison-image-button');
 const imageSelectorPrevious = imageSelector.querySelector('#previous-comparison-image-button');
@@ -34,7 +35,17 @@ const checkLoaded = setInterval(() => {
 
 // Main
 
-// eval((currentCarrosselImage.toString() + evals[destination] + '1').toString())
+function outputsize() {
+    document.querySelectorAll('.juxtapose').forEach(element => {
+        element.style.width = element.offsetHeight + 'px';
+    })
+}
+outputsize()
+
+document.querySelectorAll('.juxtapose').forEach(element => {
+    new ResizeObserver(outputsize).observe(element);
+})
+//new ResizeObserver(outputsize).observe(homepageCarrosselWrapper)
 
 function changeImage(destination) {
     if (destination === 'next' || destination === 'previous') {
@@ -44,8 +55,8 @@ function changeImage(destination) {
         } else if (equation >= allCarrosselImages) {
             equation = 0;
         }
-        homepageCarrossel.querySelector('.juxtapose-' + equation).style.order = 1;
-        currentCarrosselImage.style.order = 2;
+        currentCarrosselImage.classList.remove('selected-image');
+        homepageCarrossel.querySelector('.juxtapose-' + equation).classList.add('selected-image');
         currentCarrosselImage = homepageCarrossel.querySelector('.juxtapose-' + equation);
         currentHomepageImageIndex = Number(currentCarrosselImage.id.split('juxtapose-embed-')[1]);
         imageSelectorText.textContent = (currentHomepageImageIndex + 1) + '/' + allCarrosselImages;

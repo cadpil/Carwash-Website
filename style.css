@@ -24,23 +24,27 @@ html, body {
   grid-template-areas: "header" "main" "footer";
   grid-template-columns: auto;
   grid-template-rows: auto 1fr auto;
+  justify-items: center;
 }
 
 main {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
+  max-width: 1100px;
+  width: 100%;
 }
 
 header {
-  background-color: #f1f1f1;
+  background-color: #ffffff;
   width: 100vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   height: 50px;
+  max-width: 1250px;
 }
 
 #header-logo {
@@ -53,16 +57,17 @@ header {
 }
 
 #homepage-banner {
-  width: 100vw;
+  min-width: 100vw;
+  width: 99vw;
   margin-bottom: 20px;
+  transition: all 150ms linear;
 }
 
 #homepage-carrossel-wrapper {
-  height: 100vw;
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: row;
-  flex: 0 0 auto;
   margin-bottom: 15px;
 }
 
@@ -72,25 +77,37 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 95vw;
+  width: 100vw;
+  height: 95vw;
   position: relative;
   margin-top: 20px;
 }
 
 #main-homepage-images {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  overflow-x: clip;
+}
+#main-homepage-images .juxtapose {
+  display: none;
+}
+#main-homepage-images .selected-image {
+  display: block;
+}
+
+#homepage-comparisons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .juxtapose {
   width: 100vw;
-  height: 100vw;
-  padding-right: 5vw;
+  height: 100%;
 }
 
 .jx-image img {
@@ -122,6 +139,7 @@ header {
 #homepage-description {
   margin-bottom: 13px;
   padding: 5px 10px;
+  min-width: unset;
 }
 
 #book-now-button {
@@ -148,6 +166,7 @@ footer {
   padding: 15px 10px 15px 10px;
   background-color: #f4f4f4;
   font-size: 0.7rem;
+  margin-top: 20px;
 }
 footer p {
   margin-top: 10px;
@@ -172,6 +191,59 @@ footer .footer-link-icon {
   height: 100%;
 }
 
+#top-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100vw;
+  max-width: 1100px;
+}
+
+#top-content-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#team-quotes {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 15px;
+}
+#team-quotes .quote-header {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+}
+#team-quotes .quote-header img {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+#team-quotes .quote-header p {
+  color: #141414;
+  font-weight: 700;
+  margin-right: 10px;
+}
+#team-quotes .quote-header .quote-author {
+  font-style: normal;
+}
+#team-quotes .quote-header .quote-author-position {
+  font-weight: 500;
+  color: #8d8d8d;
+  font-style: normal;
+}
+#team-quotes p {
+  color: #696969;
+  font-size: 1rem;
+  font-style: italic;
+}
+
 .footer-link:hover .footer-link-icon {
   fill: #ebebeb;
 }
@@ -183,6 +255,9 @@ h2 {
 h1 {
   color: #141414;
   margin-bottom: 12px;
+}
+h1 br {
+  display: none;
 }
 
 .light-p {
@@ -210,4 +285,169 @@ button:hover {
 #book-now-button:hover {
   background-color: #fafafa;
   color: #141414;
+}
+
+@media (min-width: 530px) {
+  main {
+    flex-direction: column;
+  }
+  #top-content {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0px 20px;
+    margin-bottom: 35px;
+    margin-top: 10px;
+  }
+  #top-content #top-content-right {
+    padding: 30px 15px 15px 25px;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    height: 100%;
+    width: 50%;
+  }
+  #top-content #top-content-right h1 {
+    font-size: 3.3rem;
+    text-align: left;
+  }
+  #top-content #top-content-right h1 br {
+    display: inline;
+  }
+  #top-content #top-content-right p {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: left;
+    max-width: 400px;
+    padding: 0;
+  }
+  #our-work {
+    margin-left: 20px;
+  }
+  #homepage-banner {
+    width: 50%;
+    margin: 0;
+    border-radius: 6px;
+    min-width: 510px;
+  }
+  #homepage-main-image-container {
+    height: 100%;
+    max-height: 50.3vw;
+    width: 900px;
+    max-width: 50vw;
+    align-self: flex-start;
+    margin: 0;
+  }
+  #homepage-carrossel-wrapper {
+    height: 100%;
+    margin: 0;
+  }
+  #image-selector {
+    width: 70%;
+    max-width: 350px;
+  }
+  #homepage-comparisons {
+    margin-top: 20px;
+    height: 50vw;
+    max-height: 525px;
+    flex-direction: row;
+    padding-right: 20px;
+  }
+  #team-quotes {
+    margin-left: 10px;
+    padding: 0;
+  }
+  #team-quotes p {
+    color: #696969;
+    font-size: 1.2rem;
+    font-style: italic;
+  }
+  #main-homepage-images {
+    height: 100%;
+    width: 100%;
+  }
+  .juxtapose {
+    height: 100%;
+    width: 400px;
+    max-height: 95%;
+    padding: 0;
+    margin: 0px 10px;
+  }
+  #image-selector {
+    margin: 0;
+  }
+}
+@media (min-width: 675px) {
+  #homepage-banner {
+    min-width: 600px;
+  }
+}
+@media (min-width: 920px) {
+  #top-content {
+    margin: 25px auto 55px auto;
+    padding: 0px 20px;
+  }
+  #book-now-button {
+    margin: 0;
+  }
+  #homepage-banner {
+    min-width: 510px;
+  }
+  #team-quotes .quote-header .quote-author {
+    font-style: normal;
+  }
+  #team-quotes .quote-header .quote-author-position {
+    font-weight: 500;
+    color: #8d8d8d;
+    font-style: normal;
+  }
+  #team-quotes p {
+    max-width: 300px;
+    color: #696969;
+    font-size: 1.4rem;
+    font-style: italic;
+  }
+}
+@media (max-width: 920px) {
+  main {
+    flex-direction: column;
+  }
+  #top-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 20px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  #top-content #top-content-right {
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+  }
+  #top-content #top-content-right h1 {
+    text-align: center;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+  }
+  #top-content #top-content-right h1 br {
+    display: none;
+  }
+  #top-content #top-content-right p {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    max-width: 400px;
+    min-width: 400px;
+    padding: 0;
+  }
+}
+@media (max-width: 530px) {
+  #top-content #top-content-right p {
+    min-width: unset;
+  }
+  #homepage-banner {
+    transition: none;
+  }
 }/*# sourceMappingURL=style.css.map */
